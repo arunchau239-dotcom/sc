@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Download File Example</title>
+</head>
+<body>
+  <h3>Download Files</h3>
+
+  <!-- Anchor tag for direct download -->
+  <a id="downloadLink" href="Soft_computing_journel.PDF" 
+  download="Soft_computing_journel.txt">Download PDF File</a>
+
+
+  <!-- Button to trigger download via JavaScript -->
+  <button onclick="downloadFile('Soft_computing_journel.PDF')">
+    Download PDF File via JavaScript</button>
+
+    <br><br>
+
+    <!-- Anchor tag for direct download -->
+  <a id="downloadLink" href="Soft_computing_journel.txt" 
+  download="Soft_computing_journel.txt">Download Text File</a>
+
+
+  <!-- Button to trigger download via JavaScript -->
+  <button onclick="downloadFile('Soft_computing_journel.txt')">
+    Download Text File via JavaScript</button>
+
+  <script>
+    function downloadFile(filename) {
+      const link = document.createElement('a');
+      link.href = filename;           // file must be in the same directory
+      link.download = filename;       // sets the file name for the download
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    }
+  </script>
+</body>
+</html>
